@@ -1,0 +1,235 @@
+/* Fondo con textura artesanal */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6ec8c; /* Amarillo claro */
+    background-image: url('images/bck.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Animación de ingredientes cayendo */
+@keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 1; }
+}
+
+.ingredient {
+    position: absolute;
+    max-width: 80px;
+    max-height: 80px;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+/* Posiciones aleatorias de ingredientes */
+.ingredient:nth-child(1) { left: 99%; animation-duration: 8s; }
+.ingredient:nth-child(2) { left: 98%; animation-duration: 6s; }
+.ingredient:nth-child(3) { left: 97%; animation-duration: 10s; }
+.ingredient:nth-child(4) { left: 95%; animation-duration: 7s; }
+.ingredient:nth-child(5) { left: 97%; animation-duration: 9s; }
+.ingredient:nth-child(6) { left: 99%; animation-duration: 5s; }
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Resto de los estilos (logo, título, menú, modal, etc.) */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 400px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.menu-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-text {
+    max-width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.menu-text:hover {
+    transform: scale(1.1);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+    background: #FFF2CC;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 3px solid #8D6E63;
+    min-height: 300px;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.menu-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-item .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 242, 204, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #000000;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: #D32F2F;
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.menu-item .ingredients {
+    color: #388E3C;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    position: relative;
+    background: #FFF2CC;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 3px solid #8D6E63;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #D32F2F;
+}
+
+.modal-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator-dot.active {
+    background-color: #D32F2F;
+}
+
+.gallery-controls {
+    margin-top: 10px;
+}
+
+.gallery-controls button {
+    background: #D32F2F;
+    border: none;
+    color: #FFF2CC;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.gallery-controls button:hover {
+    background: #B71C1C;
+}
+
+.menu-item:hover .description {
+    background: rgba(255, 242, 204, 0.95);
+}

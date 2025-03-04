@@ -1,0 +1,58 @@
+{
+  "menu": [
+    {
+      "name": "Bistec a la Mexicana",
+      "price": 120,
+      "ingredients": ["Bistec", "Tomate", "Cebolla", "Chile"],
+      "images": ["/images/bistec1.png", "/images/bistec2.png"]
+    },
+    {
+      "name": "Burritos",
+      "price": 90,
+      "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
+      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+    },
+    {
+      "name": "Burritos2",
+      "price": 90,
+      "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
+      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+    },
+    {
+      "name": "Burritos3",
+      "price": 90,
+      "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
+      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+    },
+    {
+      "name": "Burritos4",
+      "price": 90,
+      "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
+      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+    },
+    {
+      "name": "Burritos5",
+      "price": 90,
+      "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
+      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+    },
+    {
+      "name": "Burritos6",
+      "price": 90,
+      "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
+      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+    },
+    {
+      "name": "Burritos7",
+      "price": 90,
+      "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
+      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+    },
+    {
+      "name": "Burritos8",
+      "price": 90,
+      "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso","Arroz amarillo con pimientos verdes"],
+      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+    }
+  ]
+}
