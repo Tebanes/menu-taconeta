@@ -10,7 +10,7 @@
       "name": "Test Combo 2",
       "price": 90,
       "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
-      "images": ["images/combo2.png", "images/burrito2.png"]
+      "images": ["images/tacoAngulo.png", "images/burrito2.png"]
     },
     {
       "name": "Burritos2",

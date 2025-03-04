@@ -43,18 +43,21 @@
   <!-- Modal -->
   <div v-if="modalOpen" class="modal">
     <div class="modal-overlay" @click="closeModal"></div>
-    <div class="modal-content">
+    <div class="modal-content"
+         @touchstart="handleTouchStart"
+         @touchmove="handleTouchMove"
+         @touchend="handleTouchEnd">
       <span class="close" @click="closeModal">&times;</span>
       <div class='image-gallery'>
         <img :src="selectedItem.images[currentImageIndex]" class='modal-img' />
         <div class='gallery-indicators'>
-            <span
-                    v-for="(img, index) in selectedItem.images"
-                    :key="index"
-                    class='indicator-dot'
-                    :class="{ active: currentImageIndex === index }"
-                    @click="goToImage(index)"
-            ></span>
+                <span
+                        v-for="(img, index) in selectedItem.images"
+                        :key="index"
+                        class='indicator-dot'
+                        :class="{ active: currentImageIndex === index }"
+                        @click="goToImage(index)"
+                ></span>
         </div>
       </div>
     </div>

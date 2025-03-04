@@ -202,6 +202,7 @@ body {
     max-height: 60vh; /* Limita la altura máxima */
     object-fit: cover;
     border-radius: 8px;
+    user-select: none; /* Evita que el usuario seleccione la imagen */
 }
 
 .gallery-indicators {
@@ -304,5 +305,10 @@ body {
 
     .modal-img {
         max-height: 50vh; /* Ajusta la altura máxima de la imagen en el modal */
+    }
+
+    .gallery-controls button {
+        padding: 8px 16px; /* Reduce el tamaño de los botones en móviles */
+        font-size: 14px;
     }
 }
