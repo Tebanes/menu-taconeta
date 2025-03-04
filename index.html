@@ -46,25 +46,21 @@
   <!-- Modal -->
   <div v-if="modalOpen" class="modal">
     <div class="modal-overlay" @click="closeModal"></div>
-    <div class="modal-content"
-         @touchstart="handleTouchStart"
-         @touchmove="handleTouchMove"
-         @touchend="handleTouchEnd">
+    <div class="modal-content">
       <span class="close" @click="closeModal">&times;</span>
-      <div class='image-gallery'>
-        <img :src="selectedItem.images[currentImageIndex]" class='modal-img' />
-        <div class='gallery-indicators'>
-                <span
-                        v-for="(img, index) in selectedItem.images"
-                        :key="index"
-                        class='indicator-dot'
-                        :class="{ active: currentImageIndex === index }"
-                        @click="goToImage(index)"
-                ></span>
-        </div>
+      <div class="image-gallery">
+        <!-- Botón para retroceder -->
+        <button class="nav-button prev" @click="previousImage">&#10094;</button>
+
+        <!-- Imagen actual -->
+        <img :src="selectedItem.images[currentImageIndex]" class="modal-img" />
+
+        <!-- Botón para avanzar -->
+        <button class="nav-button next" @click="nextImage">&#10095;</button>
       </div>
     </div>
   </div>
+
 </div>
 
 <script src="app.js"></script>

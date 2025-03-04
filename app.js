@@ -13,10 +13,7 @@ const app = Vue.createApp({
         fetch('menu.json')
             .then(response => response.json())
             .then(data => {
-                // Filtra los platillos activos (enable: true)
                 const activeMenu = data.menu.filter(item => item.enable);
-
-                // Ordena los platillos según la propiedad "order"
                 this.menu = activeMenu.sort((a, b) => a.order - b.order);
             })
             .catch(error => console.error('Error cargando el menú:', error));
@@ -29,9 +26,6 @@ const app = Vue.createApp({
         },
         closeModal() {
             this.modalOpen = false;
-        },
-        goToImage(index) {
-            this.currentImageIndex = index;
         },
         handleTouchStart(event) {
             this.touchStartX = event.touches[0].clientX;
@@ -49,11 +43,15 @@ const app = Vue.createApp({
         nextImage() {
             if (this.currentImageIndex < this.selectedItem.images.length - 1) {
                 this.currentImageIndex++;
+            } else {
+                this.currentImageIndex = 0; // Vuelve al inicio si es la última foto
             }
         },
         previousImage() {
             if (this.currentImageIndex > 0) {
                 this.currentImageIndex--;
+            } else {
+                this.currentImageIndex = this.selectedItem.images.length - 1; // Vuelve al final si es la primera foto
             }
         },
     },
