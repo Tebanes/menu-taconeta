@@ -5,15 +5,19 @@ const app = Vue.createApp({
             modalOpen: false,
             selectedItem: {},
             currentImageIndex: 0,
-            touchStartX: 0, // Posición inicial del toque
-            touchEndX: 0,   // Posición final del toque
+            touchStartX: 0,
+            touchEndX: 0,
         };
     },
     created() {
         fetch('menu.json')
             .then(response => response.json())
             .then(data => {
-                this.menu = data.menu;
+                // Filtra los platillos activos (enable: true)
+                const activeMenu = data.menu.filter(item => item.enable);
+
+                // Ordena los platillos según la propiedad "order"
+                this.menu = activeMenu.sort((a, b) => a.order - b.order);
             })
             .catch(error => console.error('Error cargando el menú:', error));
     },
@@ -30,17 +34,15 @@ const app = Vue.createApp({
             this.currentImageIndex = index;
         },
         handleTouchStart(event) {
-            this.touchStartX = event.touches[0].clientX; // Guarda la posición inicial del toque
+            this.touchStartX = event.touches[0].clientX;
         },
         handleTouchMove(event) {
-            this.touchEndX = event.touches[0].clientX; // Guarda la posición final del toque
+            this.touchEndX = event.touches[0].clientX;
         },
         handleTouchEnd() {
             if (this.touchStartX - this.touchEndX > 50) {
-                // Deslizamiento hacia la izquierda (siguiente imagen)
                 this.nextImage();
             } else if (this.touchEndX - this.touchStartX > 50) {
-                // Deslizamiento hacia la derecha (imagen anterior)
                 this.previousImage();
             }
         },
