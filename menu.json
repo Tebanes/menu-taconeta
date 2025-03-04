@@ -7,10 +7,10 @@
       "images": ["/images/bistec1.png", "/images/bistec2.png"]
     },
     {
-      "name": "Burritos",
+      "name": "Test Platillo 2",
       "price": 90,
       "ingredients": ["Tortilla", "Frijoles", "Carne", "Queso"],
-      "images": ["/images/burrito1.png", "/images/burrito2.png"]
+      "images": ["images/tacoAngulo.png", "/images/burrito2.png"]
     },
     {
       "name": "Burritos2",
