@@ -45,14 +45,23 @@ body {
     z-index: 1;
 }
 
-/* Resto de los estilos (logo, título, menú, modal, etc.) */
-.logo-container {
-    text-align: center;
+/* Contenedor para el logo y el título */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Separa el logo y el título */
+    align-items: center; /* Alinea verticalmente al centro */
     margin-bottom: 20px;
+    padding: 0 20px; /* Añade un poco de padding a los lados */
+}
+
+/* Logo del local */
+.logo-container {
+    text-align: right; /* Alinea el logo a la derecha */
+    flex: 1; /* Ocupa el espacio disponible */
 }
 
 .logo {
-    max-width: 400px;
+    max-width: 350px; /* Reduce el tamaño del logo */
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -61,13 +70,14 @@ body {
     transform: scale(1.1);
 }
 
+/* Título del menú */
 .menu-title {
     text-align: center;
-    margin-bottom: 20px;
+    flex: 1; /* Ocupa el espacio disponible */
 }
 
 .menu-text {
-    max-width: 300px;
+    max-width: 200px; /* Ajusta el tamaño del título */
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -76,12 +86,14 @@ body {
     transform: scale(1.1);
 }
 
+/* Grid del menú */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
+/* Items del menú */
 .menu-item {
     position: relative;
     background: #FFF2CC;
@@ -140,6 +152,7 @@ body {
     margin: 0;
 }
 
+/* Modal */
 .modal {
     position: fixed;
     top: 0;
@@ -185,7 +198,8 @@ body {
 
 .modal-img {
     width: 100%;
-    height: 400px;
+    height: auto; /* Ajusta la altura automáticamente */
+    max-height: 60vh; /* Limita la altura máxima */
     object-fit: cover;
     border-radius: 8px;
 }
@@ -232,4 +246,63 @@ body {
 
 .menu-item:hover .description {
     background: rgba(255, 242, 204, 0.95);
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Coloca el logo y el título en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .logo-container {
+        text-align: center; /* Centra el logo en móviles */
+        margin-bottom: 10px; /* Añade espacio entre el logo y el título */
+    }
+
+    .logo {
+        max-width: 120px; /* Reduce aún más el tamaño del logo en móviles */
+    }
+
+    .menu-text {
+        max-width: 150px; /* Reduce el tamaño del título en móviles */
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el grid para móviles */
+        gap: 10px;
+    }
+
+    .menu-item {
+        min-height: 200px; /* Reduce la altura de los items en móviles */
+    }
+
+    .menu-img {
+        height: 150px; /* Reduce la altura de las imágenes en móviles */
+    }
+
+    .menu-item .description {
+        padding: 10px; /* Reduce el padding en móviles */
+        min-height: 80px; /* Reduce la altura de la descripción en móviles */
+    }
+
+    .menu-item h2 {
+        font-size: 1em; /* Reduce el tamaño del título en móviles */
+    }
+
+    .menu-item .price {
+        font-size: 0.9em; /* Reduce el tamaño del precio en móviles */
+    }
+
+    .menu-item .ingredients {
+        font-size: 0.8em; /* Reduce el tamaño de los ingredientes en móviles */
+    }
+
+    .modal-content {
+        padding: 10px; /* Reduce el padding del modal en móviles */
+    }
+
+    .modal-img {
+        max-height: 50vh; /* Ajusta la altura máxima de la imagen en el modal */
+    }
 }
