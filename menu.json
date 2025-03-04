@@ -4,7 +4,7 @@
       "name": "Bistec a la Mexicana",
       "price": 120,
       "ingredients": ["Bistec", "Tomate", "Cebolla", "Chile"],
-      "images": ["images/bistec1.png", "images/bistec2.png"],
+      "images": ["images/bistec2.png", "images/bistec1.png"],
       "order": 1,
       "enable": true
     },

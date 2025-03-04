@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Taconeta</title>
+  <title>Taconeta</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -27,6 +29,7 @@
     <img src="images/redChile.png" class="ingredient">
     <img src="images/lemon.png" class="ingredient">
     <img src="images/tacoAngulo.png" class="ingredient">
+    <img src="images/hat.png" class="ingredient">
 
     <div class='menu-grid'>
       <div class='menu-item' v-for='item in menu' :key='item.name' @click="openModal(item)">

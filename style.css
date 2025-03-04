@@ -1,6 +1,6 @@
 /* Fondo con textura artesanal */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
     background-color: #f6ec8c; /* Amarillo claro */
@@ -73,7 +73,11 @@ body {
 /* Título del menú */
 .menu-title {
     text-align: center;
-    flex: 1; /* Ocupa el espacio disponible */
+    flex: 1;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #D32F2F; /* Rojo mexicano */
+    margin-bottom: 20px;
 }
 
 .menu-text {
@@ -102,8 +106,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    border-top: 3px solid #8D6E63;
-    min-height: 300px;
+    border-top: 3px solid #e74004;
+    min-height: 350px; /* Aumentamos la altura del card */
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
 .menu-item:hover {
@@ -113,7 +118,7 @@ body {
 
 .menu-img {
     width: 100%;
-    height: 250px;
+    height: 300px; /* Aumentamos la altura de la imagen */
     object-fit: cover;
     display: block;
 }
@@ -123,7 +128,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 242, 204, 0.9);
+    background: rgba(255, 242, 204, 0.5); /* Hacemos el fondo más transparente */
     backdrop-filter: blur(5px);
     padding: 15px;
     text-align: center;
@@ -135,18 +140,21 @@ body {
 
 .menu-item h2 {
     margin: 0;
-    font-size: 1.2em;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
     color: #000000;
 }
 
 .menu-item .price {
+    font-family: 'Playfair Display', serif;
     font-weight: bold;
     color: #D32F2F;
     margin: 5px 0;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .menu-item .ingredients {
+    font-family: 'Playfair Display', serif;
     color: #388E3C;
     font-size: 0.9em;
     margin: 0;
@@ -191,6 +199,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
+    font-family: 'Playfair Display', serif;
     font-size: 24px;
     cursor: pointer;
     color: #D32F2F;
@@ -275,11 +284,11 @@ body {
     }
 
     .menu-item {
-        min-height: 200px; /* Reduce la altura de los items en móviles */
+        min-height: 250px; /* Reduce la altura de los items en móviles */
     }
 
     .menu-img {
-        height: 150px; /* Reduce la altura de las imágenes en móviles */
+        height: 200px; /* Reduce la altura de las imágenes en móviles */
     }
 
     .menu-item .description {
